@@ -1,0 +1,18 @@
+# VuePress 输出目录
+docs/.vuepress/dist/
+
+# VuePress 缓存目录
+node_modules/
+docs/.vuepress/.cache/
+docs/.vuepress/.temp/
+
+# 编辑器和系统文件
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# 环境变量文件
+.env
+.env.local

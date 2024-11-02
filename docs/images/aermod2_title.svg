@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="27.134041mm"
+   height="8.1491604mm"
+   viewBox="0 0 27.13404 8.1491605"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="aermod2_title.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="5.3266727"
+     inkscape:cx="22.246533"
+     inkscape:cy="36.138883"
+     inkscape:window-width="2160"
+     inkscape:window-height="1334"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <rect
+       x="-21.777197"
+       y="-15.769694"
+       width="123.34154"
+       height="103.44169"
+       id="rect6" />
+    <rect
+       x="25.344152"
+       y="1.1264067"
+       width="16.426765"
+       height="14.455553"
+       id="rect3" />
+    <rect
+       x="35.57568"
+       y="14.455553"
+       width="13.423014"
+       height="16.426765"
+       id="rect1" />
+  </defs>
+  <g
+     inkscape:label="图层 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-135.90902,-121.97292)"
+     style="display:inline">
+    <path
+       class="st0"
+       d="m 140.57312,126.84125 -0.89958,-2.93687 -0.89959,2.93687 -0.47625,1.56104 -0.52916,1.71979 h -1.77271 l 2.67229,-8.14916 h 2.2225 l 2.67229,8.14916 H 141.605 l -0.52917,-1.71979 z"
+       id="path1"
+       style="display:inline;fill:#41b883;fill-opacity:1;stroke-width:0.264583" />
+    <path
+       id="XMLID_6_"
+       d="m 143.21785,126.03959 c 0.10667,-0.049 0.26677,0.049 0.3201,0.049 0.0534,0.049 -0.10666,0.049 -0.1601,0.0978 v 0.0488 c 0.10667,0 0.58684,0.0978 0.85358,0.24468 0,0.0978 0.0534,0.0488 0.10667,0.0488 l -0.10667,0.049 0.0534,0.049 c 0.0534,-0.0978 0.10666,0.049 0.1601,0.049 -0.37345,0.19573 -0.69355,0.19573 -1.067,0.19573 -0.0534,0 -0.21339,0.0978 -0.32009,0 -0.21339,0.049 -0.26675,0.049 -0.48016,0.049 -1.54712,0.19573 -2.93419,0.53826 -4.48134,1.02761 -0.58684,0.19573 -1.22703,0.5872 -1.81387,0.63612 -0.1601,0 -0.37345,-0.19573 -0.37345,-0.44039 0,-0.44041 0.21341,-0.78293 1.06699,-1.32121 0.4268,-0.24467 0.96029,-0.48933 1.44043,-0.63612 1.17369,-0.2936 2.34737,-0.48935 3.5744,-0.34254 0.37345,-0.0978 0.6402,-0.049 0.96029,0.0978 0.26674,0 0.1601,0.049 0.26674,0.0978"
+       style="display:inline;fill:#35495e;fill-opacity:1;stroke-width:0.510936" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.52778px;line-height:0;font-family:HGF6_CNKI;-inkscape-font-specification:HGF6_CNKI;text-align:center;letter-spacing:0.441854px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;display:inline;fill:#949a9f;fill-opacity:1;stroke-width:0.265;stroke-dasharray:none"
+       x="154.68994"
+       y="128.85152"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         style="font-size:3.52778px;line-height:0px;letter-spacing:0.441854px;fill:#949a9f;fill-opacity:1;stroke-width:0.265;stroke-dasharray:none"
+         x="154.91087"
+         y="128.85152">AERDOC</tspan></text>
+  </g>
+</svg>

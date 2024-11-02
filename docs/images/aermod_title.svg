@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="25.9081mm"
+   height="8.1491604mm"
+   viewBox="0 0 25.9081 8.1491604"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="aermod_title.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="3.7665262"
+     inkscape:cx="-22.434465"
+     inkscape:cy="31.992343"
+     inkscape:window-width="2160"
+     inkscape:window-height="1334"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="图层 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-135.90109,-121.97292)">
+    <path
+       class="st0"
+       d="m 140.57312,126.84125 -0.89958,-2.93687 -0.89959,2.93687 -0.47625,1.56104 -0.52916,1.71979 h -1.77271 l 2.67229,-8.14916 h 2.2225 l 2.67229,8.14916 H 141.605 l -0.52917,-1.71979 z"
+       id="path1"
+       style="fill:#41b883;fill-opacity:1;stroke-width:0.264583" />
+    <polygon
+       class="st1"
+       points="50,35.3 20.4,40 20.4,33.9 50,29.2 "
+       id="polygon3"
+       style="fill:#35495e;fill-opacity:1"
+       transform="matrix(0.26458333,0,0,0.26458333,130.50359,117.94917)" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.52778px;line-height:0;font-family:HGF6_CNKI;-inkscape-font-specification:HGF6_CNKI;text-align:center;letter-spacing:0.441854px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;display:inline;fill:#949a9f;fill-opacity:1;stroke-width:0.265;stroke-dasharray:none"
+       x="153.45607"
+       y="129.21785"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         style="font-size:3.52778px;line-height:0px;letter-spacing:0.441854px;fill:#949a9f;fill-opacity:1;stroke-width:0.265;stroke-dasharray:none"
+         x="153.677"
+         y="129.21785">AERDOC</tspan></text>
+  </g>
+</svg>
