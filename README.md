@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="docs/images/aermod2.svg" width="30%" />
+    <img src="docs/images/aermod2.svg" width="20%" />
 </p>
 
 <h1 align='center'>AERMOD 中文文档</h1>
