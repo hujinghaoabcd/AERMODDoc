@@ -111,7 +111,10 @@ export const guideSidebar = [
       leaf('3.5.9　湍流处理选项', '/guide/03-me-years-turbulence.html#me-3-5-9'),
     ]),
     group('3.6　EV 事件路径', '/guide/03-ev-pathway.html', [
-      leaf('3.6.1　事件处理设置', '/guide/03-ev-pathway.html'),
+      leaf('3.6.0　事件定义与语法', '/guide/03-ev-pathway.html#ev-3-6-0'),
+      leaf('3.6.1　AERMOD 自动生成事件', '/guide/03-ev-generated.html#ev-3-6-1'),
+      leaf('3.6.2　指定离散事件', '/guide/03-ev-discrete-included.html#ev-3-6-2'),
+      leaf('3.6.3　外部事件文件', '/guide/03-ev-discrete-included.html#ev-3-6-3'),
     ]),
     group('3.7　OU 输出路径', '/guide/03-ou-pathway.html', [
       leaf('3.7.1　表格与专用文件输出', '/guide/03-ou-pathway.html'),
