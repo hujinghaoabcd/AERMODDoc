@@ -11,13 +11,50 @@ const required = [
   'guide/03-so-background-downwash.md', 'guide/03-so-variable-emissions.md',
   'guide/03-so-groups-special.md', 'guide/03-re-pathway.md',
   'guide/03-me-pathway.md', 'guide/03-ev-pathway.md',
-  'guide/03-ou-pathway.md', 'appendices/appendix-a.md',
+  'guide/03-ou-pathway.md',
+  'appendices/appendix-a.md', 'appendices/appendix-a-01-usage.md',
+  'appendices/appendix-a-02-co.md', 'appendices/appendix-a-03-so.md',
+  'appendices/appendix-a-04-re.md', 'appendices/appendix-a-05-me.md',
+  'appendices/appendix-a-06-ev.md', 'appendices/appendix-a-07-ou.md',
+  'appendices/appendix-a-08-finish.md',
   'appendices/appendix-b.md', 'appendices/appendix-c.md',
   'appendices/appendix-d.md', 'appendices/appendix-e.md',
 ]
 
 // minChars 使用 JavaScript 字符串长度，而不是 UTF-8 文件字节数。
 const completedImports = {
+  'appendices/appendix-a.md': {
+    minChars: 700,
+    markers: ['appendix-a-01-usage.md', 'appendix-a-08-finish.md', '对应英文原文印刷页码 A-1 至 A-45'],
+  },
+  'appendices/appendix-a-02-co.md': {
+    minChars: 6200,
+    markers: ['id="table-a-1"', 'id="table-a-2"', 'CO MODELOPT', 'CO DEBUGOPT'],
+  },
+  'appendices/appendix-a-03-so.md': {
+    minChars: 4700,
+    markers: ['id="table-a-3"', 'id="table-a-4"', 'SO SRCPARAM', 'SO PLATFORM'],
+  },
+  'appendices/appendix-a-04-re.md': {
+    minChars: 1700,
+    markers: ['id="table-a-5"', 'id="table-a-6"', 'RE GRIDCART', 'RE EVALCART'],
+  },
+  'appendices/appendix-a-05-me.md': {
+    minChars: 1800,
+    markers: ['id="table-a-7"', 'id="table-a-8"', 'ME SURFFILE', 'ME WINDCATS'],
+  },
+  'appendices/appendix-a-06-ev.md': {
+    minChars: 700,
+    markers: ['id="table-a-9"', 'id="table-a-10"', 'EV EVENTPER', 'EV INCLUDED'],
+  },
+  'appendices/appendix-a-07-ou.md': {
+    minChars: 2400,
+    markers: ['id="table-a-11"', 'id="table-a-12"', 'OU MAXDCONT', 'OU EVENTOUT'],
+  },
+  'appendices/appendix-a-08-finish.md': {
+    minChars: 220,
+    markers: ['CO STARTING', 'OU FINISHED'],
+  },
   'appendices/appendix-b.md': {
     minChars: 3600,
     markers: ['## B.1 引言', '## B.2 输出消息汇总', '## B.3 消息布局说明', 'INCLUDED 外部文件中的行号'],
