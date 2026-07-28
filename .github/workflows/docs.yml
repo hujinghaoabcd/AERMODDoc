@@ -42,6 +42,9 @@ jobs:
       - name: Build documentation
         run: npm run docs:build
 
+      - name: Check built links and anchors
+        run: npm run docs:check-links
+
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
