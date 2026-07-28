@@ -117,7 +117,21 @@ export const guideSidebar = [
       leaf('3.6.3　外部事件文件', '/guide/03-ev-discrete-included.html#ev-3-6-3'),
     ]),
     group('3.7　OU 输出路径', '/guide/03-ou-pathway.html', [
-      leaf('3.7.1　表格与专用文件输出', '/guide/03-ou-pathway.html'),
+      leaf('3.7.1　表格打印输出', '/guide/03-ou-pathway.html#ou-3-7-1'),
+      group('3.7.2　专用输出文件', '/guide/03-ou-max-post.html#ou-3-7-2', [
+        leaf('3.7.2.1　MAXIFILE', '/guide/03-ou-max-post.html#ou-3-7-2-1'),
+        leaf('3.7.2.2　POSTFILE', '/guide/03-ou-max-post.html#ou-3-7-2-2'),
+        leaf('3.7.2.3　PLOTFILE', '/guide/03-ou-plot-toxx.html#ou-3-7-2-3'),
+        leaf('3.7.2.4　TOXXFILE', '/guide/03-ou-plot-toxx.html#ou-3-7-2-4'),
+        leaf('3.7.2.5　RANKFILE', '/guide/03-ou-rank-eval-season.html#ou-3-7-2-5'),
+        leaf('3.7.2.6　EVALFILE', '/guide/03-ou-rank-eval-season.html#ou-3-7-2-6'),
+        leaf('3.7.2.7　SEASONHR', '/guide/03-ou-rank-eval-season.html#ou-3-7-2-7'),
+        leaf('3.7.2.8　MAXDCONT', '/guide/03-ou-naaqs.html#ou-3-7-2-8'),
+        leaf('3.7.2.9　MAXDAILY', '/guide/03-ou-naaqs.html#ou-3-7-2-9'),
+        leaf('3.7.2.10　MAXDYBYYR / MXDYBYYR', '/guide/03-ou-naaqs.html#ou-3-7-2-10'),
+      ]),
+      leaf('3.7.3　EVENT 处理输出', '/guide/03-ou-event-misc.html#ou-3-7-3'),
+      leaf('3.7.4　其他输出选项', '/guide/03-ou-event-misc.html#ou-3-7-4'),
     ]),
   ]),
   group('第 4 章　参考文献', '/guide/04-references.html', [
