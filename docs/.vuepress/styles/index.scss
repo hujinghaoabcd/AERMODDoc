@@ -1,15 +1,35 @@
-.vp-hero-image {
-    display: block;
-    // max-width: 60%;
-    max-height: 190px; /* 自定义图片的最大高度 */
-    margin: 3rem auto 1.5rem;
-  }
-
-  .vp-site-logo {
-    vertical-align: middle;
-    height: 27px;
+:root {
+  --content-width: 980px;
 }
 
+.theme-default-content {
+  text-align: justify;
+}
 
- 
-  
+.theme-default-content table {
+  display: table;
+  width: 100%;
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
+
+.theme-default-content pre {
+  overflow-x: auto;
+  white-space: pre;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.theme-default-content code {
+  font-variant-ligatures: none;
+}
+
+.theme-default-content blockquote {
+  border-left-color: #1769aa;
+}
+
+@media (max-width: 719px) {
+  .theme-default-content table {
+    display: block;
+  }
+}
