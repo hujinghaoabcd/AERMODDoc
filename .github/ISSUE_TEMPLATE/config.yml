@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: AERMOD 中文在线文档
+    url: https://hujinghaoabcd.github.io/AERMODDoc/
+    about: 提交问题前可先搜索在线文档。
+  - name: EPA AERMOD 官方仓库
+    url: https://github.com/USEPA/AERMOD
+    about: 模型源代码、官方发布和上游问题请查阅 EPA 仓库。

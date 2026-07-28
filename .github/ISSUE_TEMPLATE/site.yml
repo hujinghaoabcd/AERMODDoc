@@ -1,0 +1,55 @@
+name: 网站显示或链接问题
+description: 报告页面显示、侧栏、搜索、链接、锚点或移动端问题
+title: "[网站] "
+labels:
+  - documentation
+body:
+  - type: input
+    id: url
+    attributes:
+      label: 页面地址
+      placeholder: https://hujinghaoabcd.github.io/AERMODDoc/...
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 问题类型
+      options:
+        - 页面无法打开或 404
+        - 目录或锚点跳转错误
+        - 侧栏或导航显示问题
+        - 表格或代码块显示问题
+        - 搜索问题
+        - 移动端显示问题
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 请说明预期结果和实际结果。
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 浏览器和设备
+      placeholder: Chrome 150 / Windows 11，或 Safari / iPhone
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 截图或补充信息
+      description: 可拖入截图，或补充复现步骤。
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 确认
+      options:
+        - label: 我已强制刷新页面并确认问题仍然存在。
+          required: true
+        - label: 我已搜索现有 Issue，未发现相同问题。
+          required: true

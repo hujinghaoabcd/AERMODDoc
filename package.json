@@ -1,16 +1,32 @@
 {
   "name": "aermoddoc",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "description": "EPA AERMOD 用户指南（EPA-454/B-23-008）完整中文在线文档",
+  "keywords": [
+    "AERMOD",
+    "AERMET",
+    "AERMAP",
+    "air-dispersion-model",
+    "documentation",
+    "Chinese"
+  ],
+  "homepage": "https://hujinghaoabcd.github.io/AERMODDoc/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hujinghaoabcd/AERMODDoc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hujinghaoabcd/AERMODDoc/issues"
+  },
+  "author": "Jinghao Hu",
+  "license": "MIT",
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:check": "node scripts/check-docs.mjs && node scripts/check-frontmatter-chapter1.mjs && node scripts/check-chapter2.mjs && node scripts/check-section-references.mjs && node scripts/check-terminology.mjs && node scripts/check-appendix-c.mjs && node scripts/check-chapter3-co.mjs && node scripts/check-chapter3-so.mjs && node scripts/check-chapter3-re.mjs && node scripts/check-chapter3-me.mjs && node scripts/check-chapter3-ev.mjs && node scripts/check-chapter3-ou.mjs && node scripts/check-chapter4-references.mjs && node scripts/check-appendix-a.mjs && node scripts/check-appendix-b.mjs && node scripts/check-appendix-d.mjs && node scripts/check-appendix-e.mjs",
+    "docs:check": "node scripts/check-repository-metadata.mjs && node scripts/check-docs.mjs && node scripts/check-frontmatter-chapter1.mjs && node scripts/check-chapter2.mjs && node scripts/check-section-references.mjs && node scripts/check-terminology.mjs && node scripts/check-appendix-c.mjs && node scripts/check-chapter3-co.mjs && node scripts/check-chapter3-so.mjs && node scripts/check-chapter3-re.mjs && node scripts/check-chapter3-me.mjs && node scripts/check-chapter3-ev.mjs && node scripts/check-chapter3-ou.mjs && node scripts/check-chapter4-references.mjs && node scripts/check-appendix-a.mjs && node scripts/check-appendix-b.mjs && node scripts/check-appendix-d.mjs && node scripts/check-appendix-e.mjs",
     "docs:build": "vuepress build docs",
     "docs:check-links": "node scripts/check-built-links.mjs"
   },
-  "keywords": [],
-  "author": "hujinghao",
-  "license": "ISC",
   "devDependencies": {
     "@vuepress/bundler-vite": "^2.0.0-rc.18",
     "@vuepress/plugin-copy-code": "^2.0.0-rc.57",
@@ -22,7 +38,7 @@
     "vue": "^3.5.12",
     "vuepress": "^2.0.0-rc.18"
   },
-  "directories": {"doc":"docs"},
-  "description": "AERMOD 中文文档项目",
-  "dependencies": {"vuepress-theme-plume":"^1.0.0-rc.114"}
+  "dependencies": {
+    "vuepress-theme-plume": "^1.0.0-rc.114"
+  }
 }
