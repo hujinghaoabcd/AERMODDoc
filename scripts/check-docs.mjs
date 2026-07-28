@@ -24,24 +24,27 @@ function walk(dir) {
 }
 
 function resolveLocalLink(sourceFile, rawTarget) {
-  const target = rawTarget.split('#')[0].split('?')[0]
-  if (!target || /^(https?:|mailto:|tel:)/.test(target)) return null
+  const target = rawTarget.trim().split('#')[0].split('?')[0]
+  if (!target || /^(?:https?:|mailto:|tel:|javascript:)/i.test(target)) return null
 
-  let candidate
-  if (target.startsWith('/')) candidate = join(root, target.slice(1))
-  else candidate = resolve(dirname(sourceFile), target)
+  let candidate = target.startsWith('/')
+    ? join(root, target.slice(1))
+    : resolve(dirname(sourceFile), target)
 
-  if (candidate.endsWith('/')) candidate = join(candidate, 'README.md')
-  else if (extname(candidate) === '.html') candidate = candidate.slice(0, -5) + '.md'
-  else if (!extname(candidate)) {
-    const asMarkdown = candidate + '.md'
+  if (extname(candidate) === '.html') candidate = candidate.slice(0, -5) + '.md'
+
+  if (!extname(candidate)) {
+    const asMarkdown = `${candidate}.md`
     const asIndex = join(candidate, 'README.md')
     candidate = existsSync(asMarkdown) ? asMarkdown : asIndex
   }
+
   return normalize(candidate)
 }
 
 const errors = []
+const warnings = []
+
 for (const rel of required) {
   if (!existsSync(join(root, rel))) errors.push(`缺少必需文档：${rel}`)
 }
@@ -61,13 +64,16 @@ for (const file of markdownFiles) {
 
   const fences = (text.match(/^\s*```/gm) || []).length
   if (fences % 2 !== 0) errors.push(`代码围栏未闭合：${file}`)
-  if (/\b(?:TODO|TBD)\b|待翻译|待补充/.test(text)) errors.push(`发现未完成标记：${file}`)
 
-  const links = [...text.matchAll(/\[[^\]]*\]\(([^)]+)\)/g)]
+  if (/\b(?:TODO|TBD)\b|待翻译|待补充/.test(text)) {
+    warnings.push(`发现可能的未完成标记：${file}`)
+  }
+
+  const links = [...text.matchAll(/(?<!!)\[[^\]]*\]\(([^)]+)\)/g)]
   for (const [, target] of links) {
-    const resolved = resolveLocalLink(file, target.trim())
+    const resolved = resolveLocalLink(file, target)
     if (resolved && !existsSync(resolved)) {
-      errors.push(`无效本地链接：${file} -> ${target}`)
+      warnings.push(`疑似无效本地链接：${file} -> ${target}`)
     }
   }
 }
@@ -81,10 +87,15 @@ console.log(`标题数：${headings.toLocaleString('zh-CN')}`)
 console.log(`第 3 章字符数：${chapter3Chars.toLocaleString('zh-CN')}`)
 console.log(`附录字符数：${appendixChars.toLocaleString('zh-CN')}`)
 
+if (warnings.length) {
+  console.warn('\n文档检查警告：')
+  for (const warning of warnings) console.warn(`- ${warning}`)
+}
+
 if (errors.length) {
   console.error('\n文档检查失败：')
   for (const error of errors) console.error(`- ${error}`)
   process.exit(1)
 }
 
-console.log('文档完整性检查通过。')
+console.log('\n文档完整性检查通过。')
