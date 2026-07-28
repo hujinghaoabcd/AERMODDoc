@@ -16,6 +16,18 @@ const required = [
   'appendices/appendix-d.md', 'appendices/appendix-e.md',
 ]
 
+// minChars 使用 JavaScript 字符串长度，而不是 UTF-8 文件字节数。
+const completedImports = {
+  'appendices/appendix-b.md': {
+    minChars: 3600,
+    markers: ['## B.1 引言', '## B.2 输出消息汇总', '## B.3 消息布局说明', 'INCLUDED 外部文件中的行号'],
+  },
+  'appendices/appendix-e.md': {
+    minChars: 6500,
+    markers: ['### AERMAP', '### Input Control File', '### Regulatory Model', '### Warning Message'],
+  },
+}
+
 function walk(dir) {
   return readdirSync(dir).flatMap((name) => {
     const path = join(dir, name)
@@ -45,6 +57,18 @@ const warnings = []
 
 for (const rel of required) {
   if (!existsSync(join(root, rel))) errors.push(`缺少必需文档：${rel}`)
+}
+
+for (const [rel, rule] of Object.entries(completedImports)) {
+  const file = join(root, rel)
+  if (!existsSync(file)) continue
+  const text = readFileSync(file, 'utf8')
+  if (text.length < rule.minChars) {
+    errors.push(`完整译文页面内容量异常：${rel}（${text.length} 字符）`)
+  }
+  for (const marker of rule.markers) {
+    if (!text.includes(marker)) errors.push(`完整译文页面缺少标记：${rel} -> ${marker}`)
+  }
 }
 
 const markdownFiles = walk(root).filter((path) => path.endsWith('.md'))
@@ -78,7 +102,7 @@ for (const file of markdownFiles) {
 
 // 当前线上系统化参考版的防退化监测值；完整逐页译文导入后再升级为强制阈值。
 if (chapter3Chars < 85000) warnings.push(`第 3 章内容量低于参考值：${chapter3Chars} 字符`)
-if (appendixChars < 35000) warnings.push(`附录内容量低于参考值：${appendixChars} 字符`)
+if (appendixChars < 45000) warnings.push(`附录内容量低于参考值：${appendixChars} 字符`)
 
 console.log(`Markdown 文件：${markdownFiles.length}`)
 console.log(`总字符数：${chars.toLocaleString('zh-CN')}`)
