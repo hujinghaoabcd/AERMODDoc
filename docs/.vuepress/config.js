@@ -27,6 +27,7 @@ const guideSidebar = [
     text: '第 3 章　详细关键字参考',
     collapsible: true,
     children: [
+      { text: '关键字索引', link: '/guide/03-keyword-index.html' },
       {
         text: 'CO 控制路径',
         collapsible: true,
@@ -109,7 +110,10 @@ export default defineUserConfig({
       '/guide/': guideSidebar,
       '/appendices/': appendixSidebar,
       '/resources/': [{ text: '官方资源', link: '/resources/' }],
-      '/about/': [{ text: '关于项目', link: '/about/' }],
+      '/about/': [
+        { text: '关于项目', link: '/about/' },
+        { text: '第二阶段覆盖报告', link: '/about/phase2-coverage.html' },
+      ],
     },
   }),
 })

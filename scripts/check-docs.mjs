@@ -1,0 +1,90 @@
+import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
+import { dirname, extname, join, normalize, resolve } from 'node:path'
+
+const root = resolve('docs')
+const required = [
+  'guide/03-keyword-index.md', 'guide/03-co-pathway.md', 'guide/03-co-dispersion.md',
+  'guide/03-co-lowwind-downwash.md', 'guide/03-co-no2.md',
+  'guide/03-co-averaging-urban.md', 'guide/03-co-run-debug.md',
+  'guide/03-so-pathway.md', 'guide/03-so-location.md',
+  'guide/03-so-emissions.md', 'guide/03-so-deposition-no2.md',
+  'guide/03-so-background-downwash.md', 'guide/03-so-variable-emissions.md',
+  'guide/03-so-groups-special.md', 'guide/03-re-pathway.md',
+  'guide/03-me-pathway.md', 'guide/03-ev-pathway.md',
+  'guide/03-ou-pathway.md', 'appendices/appendix-a.md',
+  'appendices/appendix-b.md', 'appendices/appendix-c.md',
+  'appendices/appendix-d.md', 'appendices/appendix-e.md',
+]
+
+function walk(dir) {
+  return readdirSync(dir).flatMap((name) => {
+    const path = join(dir, name)
+    return statSync(path).isDirectory() ? walk(path) : [path]
+  })
+}
+
+function resolveLocalLink(sourceFile, rawTarget) {
+  const target = rawTarget.split('#')[0].split('?')[0]
+  if (!target || /^(https?:|mailto:|tel:)/.test(target)) return null
+
+  let candidate
+  if (target.startsWith('/')) candidate = join(root, target.slice(1))
+  else candidate = resolve(dirname(sourceFile), target)
+
+  if (candidate.endsWith('/')) candidate = join(candidate, 'README.md')
+  else if (extname(candidate) === '.html') candidate = candidate.slice(0, -5) + '.md'
+  else if (!extname(candidate)) {
+    const asMarkdown = candidate + '.md'
+    const asIndex = join(candidate, 'README.md')
+    candidate = existsSync(asMarkdown) ? asMarkdown : asIndex
+  }
+  return normalize(candidate)
+}
+
+const errors = []
+for (const rel of required) {
+  if (!existsSync(join(root, rel))) errors.push(`缺少必需文档：${rel}`)
+}
+
+const markdownFiles = walk(root).filter((path) => path.endsWith('.md'))
+let chars = 0
+let headings = 0
+let chapter3Chars = 0
+let appendixChars = 0
+
+for (const file of markdownFiles) {
+  const text = readFileSync(file, 'utf8')
+  chars += text.length
+  headings += (text.match(/^#{1,6}\s+/gm) || []).length
+  if (file.includes('/guide/03-')) chapter3Chars += text.length
+  if (file.includes('/appendices/appendix-')) appendixChars += text.length
+
+  const fences = (text.match(/^\s*```/gm) || []).length
+  if (fences % 2 !== 0) errors.push(`代码围栏未闭合：${file}`)
+  if (/\b(?:TODO|TBD)\b|待翻译|待补充/.test(text)) errors.push(`发现未完成标记：${file}`)
+
+  const links = [...text.matchAll(/\[[^\]]*\]\(([^)]+)\)/g)]
+  for (const [, target] of links) {
+    const resolved = resolveLocalLink(file, target.trim())
+    if (resolved && !existsSync(resolved)) {
+      errors.push(`无效本地链接：${file} -> ${target}`)
+    }
+  }
+}
+
+if (chapter3Chars < 140000) errors.push(`第 3 章内容量异常：${chapter3Chars} 字符`)
+if (appendixChars < 50000) errors.push(`附录内容量异常：${appendixChars} 字符`)
+
+console.log(`Markdown 文件：${markdownFiles.length}`)
+console.log(`总字符数：${chars.toLocaleString('zh-CN')}`)
+console.log(`标题数：${headings.toLocaleString('zh-CN')}`)
+console.log(`第 3 章字符数：${chapter3Chars.toLocaleString('zh-CN')}`)
+console.log(`附录字符数：${appendixChars.toLocaleString('zh-CN')}`)
+
+if (errors.length) {
+  console.error('\n文档检查失败：')
+  for (const error of errors) console.error(`- ${error}`)
+  process.exit(1)
+}
+
+console.log('文档完整性检查通过。')
