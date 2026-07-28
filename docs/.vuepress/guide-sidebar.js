@@ -148,32 +148,30 @@ export const guideSidebar = [
         link: '/guide/03-re-pathway.html',
         collapsible: true,
         children: [
-          { text: '3.4.1　受体网络与离散受体', link: '/guide/03-re-pathway.html' },
+          { text: '3.4.0　受体高程单位', link: '/guide/03-re-pathway.html#re-3-4-0' },
+          { text: '3.4.1　网格受体网络', link: '/guide/03-re-grid.html#re-3-4-1' },
+          { text: '3.4.2　多个受体网络', link: '/guide/03-re-multiple.html#re-3-4-2' },
+          { text: '3.4.3　离散受体位置', link: '/guide/03-re-discrete.html#re-3-4-3' },
+          { text: '3.4.4　外部受体文件', link: '/guide/03-re-included.html#re-3-4-4' },
         ],
       },
       {
         text: '3.5　ME 气象路径',
         link: '/guide/03-me-pathway.html',
         collapsible: true,
-        children: [
-          { text: '3.5.1　气象文件与处理时段', link: '/guide/03-me-pathway.html' },
-        ],
+        children: [{ text: '3.5.1　气象文件与处理时段', link: '/guide/03-me-pathway.html' }],
       },
       {
         text: '3.6　EV 事件路径',
         link: '/guide/03-ev-pathway.html',
         collapsible: true,
-        children: [
-          { text: '3.6.1　事件处理设置', link: '/guide/03-ev-pathway.html' },
-        ],
+        children: [{ text: '3.6.1　事件处理设置', link: '/guide/03-ev-pathway.html' }],
       },
       {
         text: '3.7　OU 输出路径',
         link: '/guide/03-ou-pathway.html',
         collapsible: true,
-        children: [
-          { text: '3.7.1　表格与专用文件输出', link: '/guide/03-ou-pathway.html' },
-        ],
+        children: [{ text: '3.7.1　表格与专用文件输出', link: '/guide/03-ou-pathway.html' }],
       },
     ],
   },
