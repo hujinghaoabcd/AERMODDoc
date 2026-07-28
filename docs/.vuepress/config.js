@@ -33,23 +33,23 @@ const guideSidebar = [
           },
           {
             text: '2.4.2　选择模拟选项——CO 路径',
-            link: '/guide/02-4-control-source.html#_2-4-2-选择模拟选项-co-路径',
+            link: '/guide/02-4-control-source.html#_2-4-2-选择模拟选项——co-路径',
           },
           {
             text: '2.4.3　指定污染源输入——SO 路径',
-            link: '/guide/02-4-control-source.html#_2-4-3-指定污染源输入-so-路径',
+            link: '/guide/02-4-control-source.html#_2-4-3-指定污染源输入——so-路径',
           },
           {
             text: '2.4.4　指定受体网络——RE 路径',
-            link: '/guide/02-4-receptor-met-output.html#_2-4-4-指定受体网络-re-路径',
+            link: '/guide/02-4-receptor-met-output.html#_2-4-4-指定受体网络——re-路径',
           },
           {
             text: '2.4.5　指定气象输入——ME 路径',
-            link: '/guide/02-4-receptor-met-output.html#_2-4-5-指定气象输入-me-路径',
+            link: '/guide/02-4-receptor-met-output.html#_2-4-5-指定气象输入——me-路径',
           },
           {
             text: '2.4.6　选择输出选项——OU 路径',
-            link: '/guide/02-4-receptor-met-output.html#_2-4-6-选择输出选项-ou-路径',
+            link: '/guide/02-4-receptor-met-output.html#_2-4-6-选择输出选项——ou-路径',
           },
           {
             text: '2.4.7　错误消息与调试',
