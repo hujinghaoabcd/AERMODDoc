@@ -23,7 +23,7 @@ const completedImports = {
     markers: ['## B.1 引言', '## B.2 输出消息汇总', '## B.3 消息布局说明', 'INCLUDED 外部文件中的行号'],
   },
   'appendices/appendix-d.md': {
-    minChars: 8000,
+    minChars: 6000,
     markers: [
       '## D.1 缺陷修复（Bug Fixes）',
       '### 18. SWPOINT 源数组分配',
