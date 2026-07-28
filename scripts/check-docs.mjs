@@ -22,6 +22,17 @@ const completedImports = {
     minChars: 3600,
     markers: ['## B.1 引言', '## B.2 输出消息汇总', '## B.3 消息布局说明', 'INCLUDED 外部文件中的行号'],
   },
+  'appendices/appendix-d.md': {
+    minChars: 8000,
+    markers: [
+      '## D.1 缺陷修复（Bug Fixes）',
+      '### 18. SWPOINT 源数组分配',
+      '## D.2 功能增强（Enhancements）',
+      '## D.4 理论与算法更新——BETA 选项',
+      '## D.5 理论与算法更新——ALPHA 选项',
+      '## D.6 仅文档更新（Documentation Updates Only）',
+    ],
+  },
   'appendices/appendix-e.md': {
     minChars: 6500,
     markers: ['### AERMAP', '### Input Control File', '### Regulatory Model', '### Warning Message'],
