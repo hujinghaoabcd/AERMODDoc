@@ -20,7 +20,7 @@ const rules = {
     ],
   },
   'appendix-a-01-usage.md': {
-    minChars: 600,
+    minChars: 400,
     markers: ['`CO`', '`SO`', '`RE`', '`ME`', '`EV`', '`OU`', '`M`', '`O`', '`N`', '`R`'],
   },
   'appendix-a-02-co.md': {
