@@ -133,7 +133,7 @@ export default defineUserConfig({
     }),
   ],
   theme: defaultTheme({
-    logo: '/AERMODDoc/images/aermod2.svg',
+    logo: '/images/aermod2.svg',
     repo: 'hujinghaoabcd/AERMODDoc',
     docsDir: 'docs',
     lastUpdated: true,
