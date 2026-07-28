@@ -5,59 +5,22 @@ sidebarDepth: 2
 
 # 附录 A　功能性关键字/参数参考
 
-本附录按功能路径汇总 AERMOD 控制文件的主要关键字。完整参数顺序和条件要求应与第 3 章相应页面配合使用。
+> 对应英文原文印刷页码 A-1 至 A-45。  
+> 本附录是第 3 章的快速参考。关键字、二级关键字、参数名、文件名和代码语法保留英文；功能说明译为中文。
 
-## CO 控制路径
+为便于在线阅读，完整译文按照功能路径拆分为多个页面：
 
-| 关键字 | 类型 | 作用 |
-|---|---|---|
-| `STARTING` / `FINISHED` | 必需 | 路径开始与结束 |
-| `TITLEONE` / `TITLETWO` | 标题 | 运行标题 |
-| `MODELOPT` | 必需 | 扩散、法规、沉降、NO₂ 等选项 |
-| `LOW_WIND` | 可选 | 低风速参数 |
-| `ORD_DWNW` / `AWMADWNW` | 可选 | 研究级建筑物下洗选项 |
-| `AVERTIME` | 必需 | 平均时间 |
-| `MULTYEAR` | 可选 | 多年处理 |
-| `URBANOPT` | 条件必需 | 城市参数 |
-| `POLLUTID` | 必需 | 污染物类型 |
-| `FLAGPOLE` | 可选 | 旗杆受体 |
-| `RUNORNOT` | 必需 | 运行或只检查输入 |
-| `SAVEFILE` / `INITFILE` | 可选 | 保存与恢复 |
-| `ERRORFIL` | 可选 | 详细消息文件 |
-
-## SO 污染源路径
-
-| 关键字 | 作用 |
+| 节 | 内容 |
 |---|---|
-| `LOCATION` | 源 ID、类型、坐标和高程 |
-| `SRCPARAM` | 源类型对应的排放参数 |
-| `AREAVERT` | 多边形/露天矿顶点 |
-| `GASDEPOS`、`PARTDIAM` 等 | 沉降参数 |
-| `NO2RATIO` 等 | 源级 NO₂ 参数 |
-| `BACKGRND` / 背景文件 | 背景浓度 |
-| `BUILDHGT`、`BUILDWID`、`BUILDLEN`、`XBADJ`、`YBADJ` | PRIME 下洗 |
-| `URBANSRC` | 城市源标识 |
-| `EMISFACT` | 时间变化排放系数 |
-| `HOUREMIS` | 逐小时排放文件 |
-| `INCLUDED` | 外部源文件 |
-| `SRCGROUP` / `PSDGROUP` | 污染源组 |
+| [A.1 使用说明](./appendix-a-01-usage.md) | 路径顺序、关键字类型及语法约定 |
+| [A.2 CO 控制路径](./appendix-a-02-co.md) | 表 A-1、A-2：总体控制、扩散、NO₂、运行和调试参数 |
+| [A.3 SO 污染源路径](./appendix-a-03-so.md) | 表 A-3、A-4：源类型、排放、下洗、背景和源组参数 |
+| [A.4 RE 受体路径](./appendix-a-04-re.md) | 表 A-5、A-6：网格、离散受体和外部受体文件 |
+| [A.5 ME 气象路径](./appendix-a-05-me.md) | 表 A-7、A-8：气象文件、站点、日期和风场修正 |
+| [A.6 EV 事件路径](./appendix-a-06-ev.md) | 表 A-9、A-10：事件时段、位置和外部事件文件 |
+| [A.7 OU 输出路径](./appendix-a-07-ou.md) | 表 A-11、A-12：表格、后处理、NAAQS 和事件输出 |
+| [A.8 路径结束语句](./appendix-a-08-finish.md) | 六条路径的 `FINISHED` 记录及控制文件首尾结构 |
 
-## RE 受体路径
-
-`GRIDCART`、`GRIDPOLR`、`DISCCART`、`DISCPOLR`、`EVALCART` 和 `INCLUDED`。
-
-## ME 气象路径
-
-`SURFFILE`、`PROFFILE`、`SURFDATA`、`UAIRDATA`、`SITEDATA`、`PROFBASE`、`STARTEND`、`DAYRANGE` 和 `WDROTATE`。
-
-## EV 事件路径
-
-用于定义事件 ID、源组、平均时间、日期和受体位置的事件记录。
-
-## OU 输出路径
-
-`RECTABLE`、`MAXTABLE`、`DAYTABLE`、`MAXIFILE`、`POSTFILE`、`PLOTFILE`、`TOXXFILE`、`RANKFILE`、`EVALFILE`、`SEASONHR`、`MAXDCONT`、`MAXDAILY` 和 `MAXDYBYYR`。
-
-::: warning
-同名关键字在不同模型版本中可能增加参数或改变法规状态。正式输入语法应以当前版本英文用户指南和模型消息为准。
+::: warning 法规应用提示
+同名关键字在不同模型版本中可能增加参数或改变法规状态。正式输入语法应以当前版本 EPA 英文用户指南和模型运行消息为准。
 :::
