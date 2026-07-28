@@ -99,7 +99,7 @@ for (const marker of [
 
 const index = texts['02-getting-started.md'] || ''
 for (const forbidden of ['2.2—2.3', '2.4.1—2.4.3', '2.4.4—2.4.6']) {
-  if (index.includes(forbidden)) errors.push(`第2章导航仍使用区间式标题：${forbidden}`)
+  if (combined.includes(forbidden)) errors.push(`第2章仍使用区间式标题：${forbidden}`)
 }
 for (const section of ['2.1.3', '2.4.1', '2.4.2', '2.4.3', '2.4.4', '2.4.5', '2.4.6', '2.4.7', '2.4.8']) {
   if (!index.includes(section)) errors.push(`第2章导航缺少逐项链接：${section}`)
