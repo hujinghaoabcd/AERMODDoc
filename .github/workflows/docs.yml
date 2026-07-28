@@ -33,28 +33,7 @@ jobs:
         run: npm ci
 
       - name: Check documentation completeness
-        id: docs_check
-        continue-on-error: true
-        shell: bash
-        run: |
-          set +e
-          npm run docs:check > docs-check.log 2>&1
-          status=$?
-          cat docs-check.log
-          echo "status=$status" >> "$GITHUB_OUTPUT"
-          exit $status
-
-      - name: Upload documentation check log
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: docs-check-log
-          path: docs-check.log
-          if-no-files-found: error
-
-      - name: Stop on documentation check failure
-        if: steps.docs_check.outputs.status != '0'
-        run: exit 1
+        run: npm run docs:check
 
       - name: Build documentation
         run: npm run docs:build
