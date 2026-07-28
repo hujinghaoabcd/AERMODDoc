@@ -49,7 +49,7 @@ export default defineUserConfig({
       '/resources/': [{ text: '官方资源', link: '/resources/' }],
       '/about/': [
         { text: '关于项目', link: '/about/' },
-        { text: '第二阶段覆盖报告', link: '/about/phase2-coverage.html' },
+        { text: '文档完成与质量报告', link: '/about/phase2-coverage.html' },
       ],
     },
   }),
