@@ -1,0 +1,55 @@
+name: 翻译或技术表述问题
+description: 报告中文翻译、术语、参数说明或法规表述问题
+title: "[翻译/技术] "
+labels:
+  - documentation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢帮助完善 AERMOD 中文文档。涉及法规状态、参数限制或模型行为时，请提供 EPA 原文或其他可靠依据。
+  - type: input
+    id: page
+    attributes:
+      label: 页面或文件
+      description: 请提供在线页面地址或仓库文件路径。
+      placeholder: https://hujinghaoabcd.github.io/AERMODDoc/guide/...
+    validations:
+      required: true
+  - type: input
+    id: section
+    attributes:
+      label: 章节、关键字或术语
+      placeholder: 3.2.5 / MODELOPT / Building Downwash
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: 当前内容及问题
+      description: 说明当前中文表述为什么不准确、不完整或不一致。
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: 建议修改
+      description: 给出建议译文或技术说明。
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: 原文位置或依据
+      description: 请注明 EPA 文档名称、版本、页码、网址或其他依据。
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 确认
+      options:
+        - label: 我已搜索现有 Issue，未发现相同问题。
+          required: true
+        - label: 我理解法规应用应以 EPA 英文原文和主管机构要求为准。
+          required: true
