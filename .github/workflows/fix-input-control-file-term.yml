@@ -1,0 +1,48 @@
+name: One-time terminology normalization
+
+on:
+  push:
+    branches: [docs/audit-cross-references]
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: docs/audit-cross-references
+          fetch-depth: 0
+
+      - name: Normalize preferred Chinese term
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          changed = []
+          count = 0
+          for path in Path('docs').rglob('*.md'):
+              text = path.read_text(encoding='utf-8')
+              occurrences = text.count('控制输入文件')
+              if occurrences:
+                  path.write_text(text.replace('控制输入文件', '输入控制文件'), encoding='utf-8')
+                  changed.append(str(path))
+                  count += occurrences
+
+          if count == 0:
+              raise SystemExit('No terminology occurrences found')
+          print(f'Normalized {count} occurrences in {len(changed)} files')
+          PY
+
+      - name: Remove one-time workflow and commit
+        run: |
+          git rm .github/workflows/fix-input-control-file-term.yml
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add docs
+          git commit -m "docs: standardize input control file terminology"
+          git push origin HEAD:docs/audit-cross-references
