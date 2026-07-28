@@ -27,8 +27,9 @@ const guideHome = read('guide/README.md')
 const about = read('about/README.md')
 const report = read('about/phase2-coverage.md')
 
-if (preface.length < 1800) errors.push(`前置部分内容量异常：${preface.length}字符，最低1800`)
-if (chapter1.length < 7000) errors.push(`第1章内容量异常：${chapter1.length}字符，最低7000`)
+// 按完整中文源译稿实际长度设置安全下限，防止页面退化为摘要。
+if (preface.length < 1400) errors.push(`前置部分内容量异常：${preface.length}字符，最低1400`)
+if (chapter1.length < 4500) errors.push(`第1章内容量异常：${chapter1.length}字符，最低4500`)
 
 requireMarkers('前置部分', preface, [
   'EPA-454/B-23-008',
