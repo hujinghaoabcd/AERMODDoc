@@ -135,13 +135,19 @@ export const guideSidebar = [
     ]),
   ]),
   group('第 4 章　参考文献', '/guide/04-references.html', [
-    group('4.1　EPA 法规与用户指南', '/guide/04-references.html#_4-1-epa-法规与用户指南', [
-      leaf('4.1.1　法规与实施文件', '/guide/04-references.html#_4-1-1-法规与实施文件'),
-      leaf('4.1.2　模型与预处理器手册', '/guide/04-references.html#_4-1-2-模型与预处理器手册'),
+    group('4.1　AECOM—EPA', '/guide/04-references.html#ref-4-1', [
+      leaf('4.1.1　AECOM—Carruthers', '/guide/04-references.html#ref-4-1-1'),
+      leaf('4.1.2　EPA 1995—2015', '/guide/04-references.html#ref-4-1-2'),
+      leaf('4.1.3　EPA 2017—2023', '/guide/04-references.html#ref-4-1-3'),
     ]),
-    group('4.2　技术与学术文献', '/guide/04-references.html#_4-2-技术与学术文献', [
-      leaf('4.2.1　模型理论与性能', '/guide/04-references.html#_4-2-1-模型理论与性能'),
-      leaf('4.2.2　专题研究与扩展方法', '/guide/04-references.html#_4-2-2-专题研究与扩展方法'),
+    group('4.2　Hanna—Murray', '/guide/04-references.html#ref-4-2', [
+      leaf('4.2.1　Hanna—Heist', '/guide/04-references.html#ref-4-2-1'),
+      leaf('4.2.2　Luhar—Murray', '/guide/04-references.html#ref-4-2-2'),
+    ]),
+    group('4.3　Pandey—Yang', '/guide/04-references.html#ref-4-3', [
+      leaf('4.3.1　Pandey—Petersen', '/guide/04-references.html#ref-4-3-1'),
+      leaf('4.3.2　Qian—Snyder', '/guide/04-references.html#ref-4-3-2'),
+      leaf('4.3.3　Venkatram—Yang', '/guide/04-references.html#ref-4-3-3'),
     ]),
   ]),
 ]
