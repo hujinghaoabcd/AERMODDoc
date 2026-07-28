@@ -26,6 +26,7 @@ export const guideSidebar = [
     group('2.1　输入与输出文件控制', '/guide/02-1-files.html', [
       leaf('2.1.1　AERMOD 输入文件说明', '/guide/02-1-files.html#_2-1-1-aermod-输入文件说明'),
       leaf('2.1.2　AERMOD 输出文件说明', '/guide/02-1-files.html#_2-1-2-aermod-输出文件说明'),
+      leaf('2.1.3　文件输入与输出控制', '/guide/02-1-files.html#_2-1-3-文件输入与输出控制'),
     ]),
     group('2.2　关键字/参数方式说明', '/guide/02-2-keywords-defaults.html#_2-2-关键字-参数方式说明', [
       leaf('2.2.1　构建输入控制文件的基本规则', '/guide/02-2-keywords-defaults.html#_2-2-1-构建输入控制文件的基本规则'),
