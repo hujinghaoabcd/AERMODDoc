@@ -13,14 +13,55 @@ const guideSidebar = [
     text: '第 2 章　入门——简明教程',
     collapsible: true,
     children: [
-      '/guide/02-getting-started.html',
-      '/guide/02-1-files.html',
-      '/guide/02-2-keywords-defaults.html',
-      '/guide/02-4-control-source.html',
-      '/guide/02-4-receptor-met-output.html',
-      '/guide/02-4-debug.html',
-      '/guide/02-4-results.html',
-      '/guide/02-5-modify.html',
+      { text: '本章导读', link: '/guide/02-getting-started.html' },
+      { text: '2.1　输入与输出文件控制', link: '/guide/02-1-files.html' },
+      {
+        text: '2.2　关键字/参数方式说明',
+        link: '/guide/02-2-keywords-defaults.html#_2-2-关键字-参数方式说明',
+      },
+      {
+        text: '2.3　法规默认模拟选项',
+        link: '/guide/02-2-keywords-defaults.html#_2-3-法规默认模拟选项',
+      },
+      {
+        text: '2.4　建立一个简单控制文件',
+        collapsible: true,
+        children: [
+          {
+            text: '2.4.1　简单工业污染源应用',
+            link: '/guide/02-4-control-source.html#_2-4-1-简单工业污染源应用',
+          },
+          {
+            text: '2.4.2　选择模拟选项——CO 路径',
+            link: '/guide/02-4-control-source.html#_2-4-2-选择模拟选项-co-路径',
+          },
+          {
+            text: '2.4.3　指定污染源输入——SO 路径',
+            link: '/guide/02-4-control-source.html#_2-4-3-指定污染源输入-so-路径',
+          },
+          {
+            text: '2.4.4　指定受体网络——RE 路径',
+            link: '/guide/02-4-receptor-met-output.html#_2-4-4-指定受体网络-re-路径',
+          },
+          {
+            text: '2.4.5　指定气象输入——ME 路径',
+            link: '/guide/02-4-receptor-met-output.html#_2-4-5-指定气象输入-me-路径',
+          },
+          {
+            text: '2.4.6　选择输出选项——OU 路径',
+            link: '/guide/02-4-receptor-met-output.html#_2-4-6-选择输出选项-ou-路径',
+          },
+          {
+            text: '2.4.7　错误消息与调试',
+            link: '/guide/02-4-debug.html',
+          },
+          {
+            text: '2.4.8　运行模型并检查结果',
+            link: '/guide/02-4-results.html',
+          },
+        ],
+      },
+      { text: '2.5　修改已有控制文件', link: '/guide/02-5-modify.html' },
     ],
   },
   {
@@ -80,6 +121,7 @@ export default defineUserConfig({
   head: [
     ['meta', { name: 'theme-color', content: '#1769aa' }],
     ['meta', { name: 'keywords', content: 'AERMOD,AERMET,AERMAP,大气扩散模型,中文文档' }],
+    ['link', { rel: 'icon', href: '/AERMODDoc/images/aermod2.svg' }],
   ],
   plugins: [
     nprogressPlugin(),
@@ -91,7 +133,7 @@ export default defineUserConfig({
     }),
   ],
   theme: defaultTheme({
-    logo: '/images/aermod2.svg',
+    logo: '/AERMODDoc/images/aermod2.svg',
     repo: 'hujinghaoabcd/AERMODDoc',
     docsDir: 'docs',
     lastUpdated: true,
