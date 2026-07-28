@@ -1,38 +1,29 @@
 ---
 title: 附录 C　文件格式说明
-sidebarDepth: 3
+sidebarDepth: 2
 ---
 
 # 附录 C　文件格式说明
 
-本附录说明 AERMOD/AERMET 常用输入输出文件的字段。关键字、变量名和 Fortran `FORMAT` 保留英文。
+> 对应英文原文印刷页码 C-1 至 C-20。  
+> AERMOD/AERMET 关键字、变量名、Fortran `READ`/`WRITE`/`FORMAT` 语句、文件名和模型原始输出保留英文。
 
-## C.1 AERMET 气象数据
+为便于在线查阅，完整译文按文件类型拆分为 11 个页面：
 
-AERMET 为 AERMOD 生成：
-
-- **SURFACE OUTPUT：** 每小时一条地表边界层参数记录；
-- **PROFILE OUTPUT：** 每小时每个观测高度一条廓线记录。
-
-地表记录主要字段包括：日期、感热通量 `H`、摩阻速度 `u*`、对流速度尺度 `w*`、位温梯度 `VPTG`、边界层高度 `Zic/Zim`、Monin–Obukhov 长度 `L`、粗糙度 `z0`、参考风速风向、温度、降水、湿度、气压和文件标志。
-
-廓线记录包括：日期小时、测量高度、最高层标志、风向、风速、温度、风向标准差和垂直风速标准差。
-
-## C.2—C.11 AERMOD 专用输出
-
-| 选项 | 文件内容 |
+| 节 | 内容 |
 |---|---|
-| `MAXIFILE` | 达到阈值的平均值、日期、受体和浓度 |
-| `POSTFILE` | 全部同期结果，格式化或未格式化 |
-| `PLOTFILE` | 每个受体指定名次的高值 |
-| `TOXXFILE` | TOXX/TOXST 使用的阈值或长期结果 |
-| `RANKFILE` | 去除重复数据时段的排序最大值 |
-| `EVALFILE` | 弧线最大值及 32 项烟羽/气象变量 |
-| `SEASONHR` | 季节—小时平均结果 |
-| `MAXDCONT` | 目标源组设计值及各源组时空配对贡献 |
-| `MAXDAILY` | 每天、每个受体的最大 1 小时值 |
-| `MAXDYBYYR` | 按年份和排序汇总的逐日最大 1 小时值 |
+| [C.1 AERMET 气象数据](./appendix-c-01.md) | SURFACE OUTPUT 与 PROFILE OUTPUT |
+| [C.2 MAXIFILE](./appendix-c-02.md) | 阈值超标文件 |
+| [C.3 POSTFILE](./appendix-c-03.md) | 未格式化与格式化后处理文件 |
+| [C.4 PLOTFILE](./appendix-c-04.md) | 用于绘图的高值结果 |
+| [C.5 TOXXFILE](./appendix-c-05.md) | TOXX 模型输入文件 |
+| [C.6 RANKFILE](./appendix-c-06.md) | 按排序输出的最大值 |
+| [C.7 EVALFILE](./appendix-c-07.md) | 模型评估用弧线最大值 |
+| [C.8 SEASONHR](./appendix-c-08.md) | 按季节和一天中的小时输出 |
+| [C.9 MAXDCONT](./appendix-c-09.md) | 多年排序值的污染源组贡献 |
+| [C.10 MAXDAILY](./appendix-c-10.md) | 逐日最大 1 小时浓度 |
+| [C.11 MXDYBYYR](./appendix-c-11.md) | 按年份汇总逐日最大 1 小时浓度 |
 
-格式化文件头通常以 `*` 开始，并给出模型版本、标题、选项、平均时间、源组、记录 `FORMAT` 和列名。常见受体字段为 `X`、`Y`、`ZELEV`、`ZHILL`、`ZFLAG`、网络 ID、日期和平均浓度。
-
-未格式化文件是 Fortran 二进制记录，不适合直接用文本编辑器读取；后处理程序必须与编译器、记录结构和变量类型匹配。
+::: tip 示例保留原则
+原文大量连续数值记录使用相同格式。在线译文保留全部字段、Fortran 格式语句、表头和具有代表性的数据记录；法规复核和程序开发时应同时核对 EPA 英文原文及实际模型版本输出。
+:::

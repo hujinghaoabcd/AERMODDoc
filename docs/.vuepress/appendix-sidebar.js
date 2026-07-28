@@ -64,7 +64,112 @@ export const appendixSidebar = [
     ],
   },
   { text: '附录 B　错误消息代码', link: '/appendices/appendix-b.html' },
-  { text: '附录 C　文件格式', link: '/appendices/appendix-c.html' },
+  {
+    text: '附录 C　文件格式说明',
+    link: '/appendices/appendix-c.html',
+    collapsible: true,
+    children: [
+      {
+        text: 'C.1　AERMET 气象数据',
+        link: '/appendices/appendix-c-01.html',
+        collapsible: true,
+        children: [
+          { text: 'C.1.1　SURFACE OUTPUT', link: '/appendices/appendix-c-01.html#c-1-1-surface-output' },
+          { text: 'C.1.2　PROFILE OUTPUT', link: '/appendices/appendix-c-01.html#c-1-2-profile-output' },
+        ],
+      },
+      {
+        text: 'C.2　MAXIFILE',
+        link: '/appendices/appendix-c-02.html',
+        collapsible: true,
+        children: [
+          { text: 'C.2.1　文件结构与字段', link: '/appendices/appendix-c-02.html#c-2-1-文件结构与字段' },
+          { text: 'C.2.2　示例', link: '/appendices/appendix-c-02.html#c-2-2-示例' },
+        ],
+      },
+      {
+        text: 'C.3　POSTFILE',
+        link: '/appendices/appendix-c-03.html',
+        collapsible: true,
+        children: [
+          { text: 'C.3.1　未格式化 POSTFILE', link: '/appendices/appendix-c-03.html#c-3-1-未格式化-postfile' },
+          { text: 'C.3.2　格式化 POSTFILE', link: '/appendices/appendix-c-03.html#c-3-2-格式化-postfile' },
+        ],
+      },
+      {
+        text: 'C.4　PLOTFILE',
+        link: '/appendices/appendix-c-04.html',
+        collapsible: true,
+        children: [
+          { text: 'C.4.1　文件结构与字段', link: '/appendices/appendix-c-04.html#c-4-1-文件结构与字段' },
+          { text: 'C.4.2　示例与最大值标记', link: '/appendices/appendix-c-04.html#c-4-2-示例与最大值标记' },
+        ],
+      },
+      {
+        text: 'C.5　TOXXFILE',
+        link: '/appendices/appendix-c-05.html',
+        collapsible: true,
+        children: [
+          { text: 'C.5.1　文件头记录', link: '/appendices/appendix-c-05.html#c-5-1-文件头记录' },
+          { text: 'C.5.2　数据记录与标识变量', link: '/appendices/appendix-c-05.html#c-5-2-数据记录与标识变量' },
+        ],
+      },
+      {
+        text: 'C.6　RANKFILE',
+        link: '/appendices/appendix-c-06.html',
+        collapsible: true,
+        children: [
+          { text: 'C.6.1　文件结构与字段', link: '/appendices/appendix-c-06.html#c-6-1-文件结构与字段' },
+          { text: 'C.6.2　示例', link: '/appendices/appendix-c-06.html#c-6-2-示例' },
+        ],
+      },
+      {
+        text: 'C.7　EVALFILE',
+        link: '/appendices/appendix-c-07.html',
+        collapsible: true,
+        children: [
+          { text: 'C.7.1　适用范围与输出变量', link: '/appendices/appendix-c-07.html#c-7-1-适用范围与输出变量' },
+          { text: 'C.7.2　Fortran 输出格式', link: '/appendices/appendix-c-07.html#c-7-2-fortran-输出格式' },
+        ],
+      },
+      {
+        text: 'C.8　SEASONHR',
+        link: '/appendices/appendix-c-08.html',
+        collapsible: true,
+        children: [
+          { text: 'C.8.1　文件结构与字段', link: '/appendices/appendix-c-08.html#c-8-1-文件结构与字段' },
+          { text: 'C.8.2　季节索引与示例', link: '/appendices/appendix-c-08.html#c-8-2-季节索引与示例' },
+        ],
+      },
+      {
+        text: 'C.9　MAXDCONT',
+        link: '/appendices/appendix-c-09.html',
+        collapsible: true,
+        children: [
+          { text: 'C.9.1　文件结构与字段', link: '/appendices/appendix-c-09.html#c-9-1-文件结构与字段' },
+          { text: 'C.9.2　排序组织与示例', link: '/appendices/appendix-c-09.html#c-9-2-排序组织与示例' },
+        ],
+      },
+      {
+        text: 'C.10　MAXDAILY',
+        link: '/appendices/appendix-c-10.html',
+        collapsible: true,
+        children: [
+          { text: 'C.10.1　文件结构与字段', link: '/appendices/appendix-c-10.html#c-10-1-文件结构与字段' },
+          { text: 'C.10.2　示例', link: '/appendices/appendix-c-10.html#c-10-2-示例' },
+        ],
+      },
+      {
+        text: 'C.11　MXDYBYYR',
+        link: '/appendices/appendix-c-11.html',
+        collapsible: true,
+        children: [
+          { text: 'C.11.1　文件结构与字段', link: '/appendices/appendix-c-11.html#c-11-1-文件结构与字段' },
+          { text: 'C.11.2　排序组织与示例', link: '/appendices/appendix-c-11.html#c-11-2-排序组织与示例' },
+        ],
+      },
+    ],
+  },
   { text: '附录 D　23132 版本修订', link: '/appendices/appendix-d.html' },
   { text: '附录 E　术语表', link: '/appendices/appendix-e.html' },
 ]
