@@ -1,0 +1,43 @@
+name: One-time sync package license
+
+on:
+  push:
+    branches: [chore/repository-release-polish]
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: chore/repository-release-polish
+          fetch-depth: 0
+
+      - name: Synchronize package-lock metadata
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('package-lock.json')
+          data = json.loads(path.read_text(encoding='utf-8'))
+          root = data.setdefault('packages', {}).setdefault('', {})
+          root['name'] = 'aermoddoc'
+          root['version'] = '1.0.0'
+          root['license'] = 'MIT'
+          path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+
+      - name: Remove one-time workflow and commit
+        run: |
+          git rm .github/workflows/sync-package-license.yml
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add package-lock.json
+          git commit -m "chore: synchronize package lock license"
+          git push origin HEAD:chore/repository-release-polish
