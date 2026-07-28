@@ -29,7 +29,8 @@ const rules = {
       "SO GASDEPOS",
       "SO PARTDIAM",
       "SO METHOD_2",
-      "SO EMISUNIT"
+      "SO CONCUNIT",
+      "SO DEPOUNIT"
     ]
   },
   "03-so-deposition-no2.md": {
@@ -60,6 +61,7 @@ const rules = {
       "SO URBANSRC",
       "SO EMISFACT",
       "SO HOUREMIS",
+      "SO EMISUNIT",
       "SO RLEMCONV"
     ]
   },
