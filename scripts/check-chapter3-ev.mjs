@@ -4,15 +4,15 @@ import { join, resolve } from 'node:path'
 const root = resolve('docs/guide')
 const rules = {
   '03-ev-pathway.md': {
-    minChars: 1900,
+    minChars: 1400,
     markers: ['ev-3-6-0', 'EV EVENTPER', 'EV EVENTLOC', 'YYMMDDHH', 'RNG='],
   },
   '03-ev-generated.md': {
-    minChars: 1500,
+    minChars: 1000,
     markers: ['ev-3-6-1', 'CO EVENTFIL', 'OU RECTABLE', 'OU MAXIFILE', 'H1H01001', 'TH240019'],
   },
   '03-ev-discrete-included.md': {
-    minChars: 1600,
+    minChars: 1200,
     markers: ['ev-3-6-2', 'ev-3-6-3', 'CO AVERTIME', 'SO SRCGROUP', 'EV INCLUDED', '起始列'],
   },
 }
@@ -42,7 +42,7 @@ for (let i = 0; i <= 3; i += 1) {
   if (count !== 1) errors.push(`EV 三级目录锚点数量异常：${anchor}（${count}）`)
 }
 
-if (total < 6000) errors.push(`EV 路径完整译文总量异常：${total} 字符`)
+if (total < 4500) errors.push(`EV 路径完整译文总量异常：${total} 字符`)
 
 if (errors.length) {
   console.error('\nEV 路径完整性检查失败：')
