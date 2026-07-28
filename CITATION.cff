@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "使用本项目时，请引用以下信息。"
+title: "AERMOD 中文文档"
+type: software
+version: 1.0.0
+date-released: 2026-07-28
+license: MIT
+repository-code: "https://github.com/hujinghaoabcd/AERMODDoc"
+url: "https://hujinghaoabcd.github.io/AERMODDoc/"
+abstract: >-
+  美国环境保护署 AERMOD 用户指南（EPA-454/B-23-008，2023年10月）
+  的完整中文在线文档，包含前置部分、第1—4章、附录A—E、关键字索引、
+  文件格式说明和自动化质量检查。
+authors:
+  - family-names: Hu
+    given-names: Jinghao
+    affiliation: University of Chinese Academy of Sciences
