@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:check": "node scripts/check-docs.mjs && node scripts/check-appendix-c.mjs && node scripts/check-chapter3-co.mjs && node scripts/check-chapter3-so.mjs",
+    "docs:check": "node scripts/check-docs.mjs && node scripts/check-appendix-c.mjs && node scripts/check-chapter3-co.mjs && node scripts/check-chapter3-so.mjs && node scripts/check-chapter3-re.mjs",
     "docs:build": "vuepress build docs"
   },
   "keywords": [],
@@ -21,11 +21,7 @@
     "vue": "^3.5.12",
     "vuepress": "^2.0.0-rc.18"
   },
-  "directories": {
-    "doc": "docs"
-  },
+  "directories": {"doc":"docs"},
   "description": "AERMOD 中文文档项目",
-  "dependencies": {
-    "vuepress-theme-plume": "^1.0.0-rc.114"
-  }
+  "dependencies": {"vuepress-theme-plume":"^1.0.0-rc.114"}
 }
