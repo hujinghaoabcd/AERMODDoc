@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:check": "node scripts/check-docs.mjs && node scripts/check-chapter2.mjs && node scripts/check-section-references.mjs && node scripts/check-terminology.mjs && node scripts/check-appendix-c.mjs && node scripts/check-chapter3-co.mjs && node scripts/check-chapter3-so.mjs && node scripts/check-chapter3-re.mjs && node scripts/check-chapter3-me.mjs && node scripts/check-chapter3-ev.mjs && node scripts/check-chapter3-ou.mjs && node scripts/check-chapter4-references.mjs && node scripts/check-appendix-a.mjs && node scripts/check-appendix-b.mjs && node scripts/check-appendix-d.mjs && node scripts/check-appendix-e.mjs",
+    "docs:check": "node scripts/check-docs.mjs && node scripts/check-frontmatter-chapter1.mjs && node scripts/check-chapter2.mjs && node scripts/check-section-references.mjs && node scripts/check-terminology.mjs && node scripts/check-appendix-c.mjs && node scripts/check-chapter3-co.mjs && node scripts/check-chapter3-so.mjs && node scripts/check-chapter3-re.mjs && node scripts/check-chapter3-me.mjs && node scripts/check-chapter3-ev.mjs && node scripts/check-chapter3-ou.mjs && node scripts/check-chapter4-references.mjs && node scripts/check-appendix-a.mjs && node scripts/check-appendix-b.mjs && node scripts/check-appendix-d.mjs && node scripts/check-appendix-e.mjs",
     "docs:build": "vuepress build docs",
     "docs:check-links": "node scripts/check-built-links.mjs"
   },
