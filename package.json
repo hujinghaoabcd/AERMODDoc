@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:check": "node scripts/check-docs.mjs && node scripts/check-appendix-c.mjs",
+    "docs:check": "node scripts/check-docs.mjs && node scripts/check-appendix-c.mjs && node scripts/check-chapter3-co.mjs",
     "docs:build": "vuepress build docs"
   },
   "keywords": [],
