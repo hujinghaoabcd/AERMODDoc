@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:check": "node scripts/check-docs.mjs && node scripts/check-appendix-c.mjs && node scripts/check-chapter3-co.mjs && node scripts/check-chapter3-so.mjs && node scripts/check-chapter3-re.mjs && node scripts/check-chapter3-me.mjs && node scripts/check-chapter3-ev.mjs && node scripts/check-chapter3-ou.mjs",
+    "docs:check": "node scripts/check-docs.mjs && node scripts/check-appendix-c.mjs && node scripts/check-chapter3-co.mjs && node scripts/check-chapter3-so.mjs && node scripts/check-chapter3-re.mjs && node scripts/check-chapter3-me.mjs && node scripts/check-chapter3-ev.mjs && node scripts/check-chapter3-ou.mjs && node scripts/check-chapter4-references.mjs",
     "docs:build": "vuepress build docs"
   },
   "keywords": [],
