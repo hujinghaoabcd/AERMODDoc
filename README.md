@@ -1,45 +1,50 @@
 <p align="center">
-    <img src="docs/images/aermod2.svg" width="20%" />
+  <img src="docs/images/aermod2.svg" width="150" alt="AERMOD 中文文档" />
 </p>
 
-<h1 align='center'>AERMOD 中文文档</h1>
+<h1 align="center">AERMOD 中文文档</h1>
 
 <p align="center">
-<a href=""><img src="https://img.shields.io/badge/version-0.1-yellow.svg" /></a>
-<a href=""><img src="https://img.shields.io/badge/author-Jinghao Hu-orange.svg" /></a>
-<a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/markdown-1.0%7C2.0%7C3.0%7C4.0-blue.svg" /></a>
-<a href="http://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-green.svg" /></a>
+  <a href="https://github.com/hujinghaoabcd/AERMODDoc/actions"><img src="https://img.shields.io/github/actions/workflow/status/hujinghaoabcd/AERMODDoc/docs.yml?branch=main&label=docs" alt="Documentation build" /></a>
+  <img src="https://img.shields.io/badge/AERMOD%20User%20Guide-EPA--454%2FB--23--008-blue" alt="EPA user guide" />
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License" /></a>
 </p>
 
-> 本文档基于 AERMOD 官方英文资料翻译整合而成，旨在为大家提供简明易懂的中文使用指南和技术支持。由于个人学识有限，难免会有不足之处，欢迎大家批评指正，共同完善！
+本项目提供美国 EPA **AERMOD 用户指南（EPA-454/B-23-008，2023 年 10 月）**的完整中文在线版本，包含第 1—4 章和附录 A—E。
 
-## 介绍
+## 在线阅读
 
-AERMOD 是一个大气污染扩散模型，广泛应用于环境影响评估和空气质量模拟。该中文文档汇集了模型配置、运行和结果分析的全面指南，帮助研究人员和工程师更高效地使用 AERMOD 模型。
+[AERMOD 中文文档](https://hujinghaoabcd.github.io/AERMODDoc/)
 
----
+## 内容
 
-## 特点
+- 第 1 章：引言
+- 第 2 章：入门——简明教程
+- 第 3 章：CO、SO、RE、ME、EV、OU 六条功能路径的详细关键字参考
+- 第 4 章：参考文献
+- 附录 A—E：关键字/参数、错误消息、文件格式、版本修订和术语表
 
-- **跨平台兼容**：支持多种操作系统，适合不同的计算环境。
-- **模块化设计**：包含 AERMOD、AERMAP、AERMET 等模块，支持复杂地形和建筑物影响的模拟。
-- **精细的扩散模拟**：提供多种气象和地形因素的处理，适合大气污染物扩散的高精度模拟。
-- **丰富的应用领域**：广泛应用于工业排放、环境影响评估和空气质量模拟。
-- **强大的可视化支持**：兼容 GIS 工具和多种数据分析软件，为结果展示提供便利。
+## 本地运行
 
----
+```bash
+npm ci
+npm run docs:dev
+```
 
-## 网址
+构建静态站点：
 
-[AERMOD 中文文档](https://hujinghaoabcd.github.io/AERMODDoc/) 
+```bash
+npm run docs:build
+```
 
+## 说明
 
-有关项目的更多信息与官方资源，请访问以下链接：
-- 官方英文文档：[AERMOD 官方文档](https://www.epa.gov/scram/air-quality-dispersion-modeling-preferred-and-recommended-models)
-- AERMOD GitHub 仓库：[AERMOD GitHub](https://github.com/USEPA/AERMOD)
+本译文用于阅读、研究和软件使用辅助。涉及法规应用时，应以 EPA 发布的英文原文、现行《空气质量模型指南》及主管机构要求为准。
 
----
+## 贡献
+
+欢迎通过 Issue 或 Pull Request 报告翻译、格式、链接和技术表述问题。请尽量注明章节、小节和英文原文页码。
 
 ## License
 
-[MIT © 2024 hujinghao | 中国科学院大学 (UCAS)](./LICENSE)
+[MIT © Jinghao Hu | University of Chinese Academy of Sciences](./LICENSE)
