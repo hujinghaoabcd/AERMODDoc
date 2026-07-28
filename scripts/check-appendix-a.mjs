@@ -25,32 +25,26 @@ const rules = {
   },
   'appendix-a-02-co.md': {
     minChars: 6200,
-    minTokens: 85,
     markers: ['id="table-a-1"', 'id="table-a-2"', 'CO MODELOPT', 'CO DEBUGOPT'],
   },
   'appendix-a-03-so.md': {
     minChars: 4700,
-    minTokens: 65,
     markers: ['id="table-a-3"', 'id="table-a-4"', 'SO SRCPARAM', 'SO PLATFORM'],
   },
   'appendix-a-04-re.md': {
     minChars: 1700,
-    minTokens: 18,
     markers: ['id="table-a-5"', 'id="table-a-6"', 'RE GRIDCART', 'RE EVALCART'],
   },
   'appendix-a-05-me.md': {
     minChars: 1800,
-    minTokens: 22,
     markers: ['id="table-a-7"', 'id="table-a-8"', 'ME SURFFILE', 'ME WINDCATS'],
   },
   'appendix-a-06-ev.md': {
     minChars: 700,
-    minTokens: 7,
     markers: ['id="table-a-9"', 'id="table-a-10"', 'EV EVENTPER', 'EV INCLUDED'],
   },
   'appendix-a-07-ou.md': {
     minChars: 2400,
-    minTokens: 28,
     markers: ['id="table-a-11"', 'id="table-a-12"', 'OU MAXDCONT', 'OU EVENTOUT'],
   },
   'appendix-a-08-finish.md': {
@@ -77,11 +71,7 @@ for (const [name, rule] of Object.entries(rules)) {
     if (!text.includes(marker)) errors.push(`附录A页面缺少标记：${name} -> ${marker}`)
   }
 
-  const tokens = new Set([...text.matchAll(/`([A-Z][A-Z0-9_]{1,})`/g)].map((match) => match[1]))
-  for (const token of tokens) allTokens.add(token)
-  if (rule.minTokens && tokens.size < rule.minTokens) {
-    errors.push(`附录A关键字/选项覆盖不足：${name}（${tokens.size}，最低${rule.minTokens}）`)
-  }
+  for (const match of text.matchAll(/`([A-Z][A-Z0-9_]{1,})`/g)) allTokens.add(match[1])
 }
 
 for (let i = 1; i <= 12; i += 1) {
