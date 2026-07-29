@@ -1,0 +1,131 @@
+name: Publish documentation release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/publish-release.yml
+      - package.json
+      - CHANGELOG.md
+      - CITATION.cff
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: documentation-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main with tags
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve version and tag
+        id: version
+        shell: bash
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          TAG="v${VERSION}"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+
+          if ! grep -Fq "## [${VERSION}]" CHANGELOG.md; then
+            echo "CHANGELOG.md does not contain version ${VERSION}." >&2
+            exit 1
+          fi
+
+          if ! grep -Fq "version: ${VERSION}" CITATION.cff; then
+            echo "CITATION.cff does not contain version ${VERSION}." >&2
+            exit 1
+          fi
+
+      - name: Check existing tag and release
+        id: state
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.version.outputs.tag }}
+        shell: bash
+        run: |
+          if git ls-remote --exit-code --tags origin "refs/tags/${TAG}" >/dev/null 2>&1; then
+            echo "tag_exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag_exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+          if gh release view "${TAG}" --repo "${GITHUB_REPOSITORY}" >/dev/null 2>&1; then
+            echo "release_exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "release_exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Extract release notes from Changelog
+        if: steps.state.outputs.release_exists != 'true'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        shell: bash
+        run: |
+          node <<'NODE'
+          const { readFileSync, writeFileSync } = require('node:fs')
+          const { join } = require('node:path')
+
+          const version = process.env.VERSION
+          const changelog = readFileSync('CHANGELOG.md', 'utf8')
+          const heading = `## [${version}]`
+          const start = changelog.indexOf(heading)
+          if (start < 0) throw new Error(`Missing Changelog section: ${heading}`)
+
+          const bodyStart = changelog.indexOf('\n', start) + 1
+          const next = changelog.indexOf('\n## [', bodyStart)
+          const section = changelog.slice(bodyStart, next < 0 ? changelog.length : next).trim()
+          const notes = [
+            `# AERMOD 中文文档 v${version}`,
+            '',
+            '这是中文在线文档版本，不代表 EPA AERMOD 模型版本。',
+            '',
+            '- 在线文档：https://hujinghaoabcd.github.io/AERMODDoc/',
+            '- 英文底本：EPA-454/B-23-008（2023 年 10 月）',
+            '',
+            section,
+            '',
+          ].join('\n')
+
+          writeFileSync(join(process.env.RUNNER_TEMP, 'release-notes.md'), notes)
+          NODE
+
+      - name: Create version tag
+        if: steps.state.outputs.tag_exists != 'true'
+        env:
+          TAG: ${{ steps.version.outputs.tag }}
+          VERSION: ${{ steps.version.outputs.version }}
+        shell: bash
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git tag -a "$TAG" -m "AERMOD 中文文档 ${VERSION}"
+          git push origin "$TAG"
+
+      - name: Create GitHub Release
+        if: steps.state.outputs.release_exists != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.version.outputs.tag }}
+          VERSION: ${{ steps.version.outputs.version }}
+        shell: bash
+        run: |
+          gh release create "$TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "AERMOD 中文文档 ${VERSION}" \
+            --notes-file "$RUNNER_TEMP/release-notes.md" \
+            --verify-tag
+
+      - name: Report existing release
+        if: steps.state.outputs.release_exists == 'true'
+        env:
+          TAG: ${{ steps.version.outputs.tag }}
+        run: echo "Release ${TAG} already exists; no changes were made."
