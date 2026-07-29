@@ -59,6 +59,7 @@ try {
   if (pkg.repository?.url !== 'git+https://github.com/hujinghaoabcd/AERMODDoc.git') errors.push('package.json repository异常')
   if (pkg.bugs?.url !== 'https://github.com/hujinghaoabcd/AERMODDoc/issues') errors.push('package.json bugs异常')
   if (!pkg.scripts?.['docs:check']?.includes('check-repository-metadata.mjs')) errors.push('docs:check未接入仓库元数据检查')
+  if (!pkg.scripts?.['docs:check']?.includes('check-release-config.mjs')) errors.push('docs:check未接入发布配置检查')
 } catch (error) {
   errors.push(`package.json无法解析：${error.message}`)
 }
@@ -85,7 +86,7 @@ requireMarkers('CONTRIBUTING', read('CONTRIBUTING.md'), [
 ])
 
 requireMarkers('CHANGELOG', read('CHANGELOG.md'), [
-  '## [1.0.0] - 2026-07-28',
+  '## [1.0.0] - 2026-07-29',
   '完整导入前置部分、第 1—4 章及附录 A—E',
   '自动化质量检查',
 ])
@@ -94,7 +95,7 @@ requireMarkers('CITATION.cff', read('CITATION.cff'), [
   'cff-version: 1.2.0',
   'title: "AERMOD 中文文档"',
   'version: 1.0.0',
-  'date-released: 2026-07-28',
+  'date-released: 2026-07-29',
   'license: MIT',
   'family-names: Hu',
   'given-names: Jinghao',
@@ -105,11 +106,13 @@ requireMarkers('翻译Issue模板', read('.github/ISSUE_TEMPLATE/translation.yml
   '原文位置或依据',
   'required: true',
 ])
+
 requireMarkers('网站Issue模板', read('.github/ISSUE_TEMPLATE/site.yml'), [
   'name: 网站显示或链接问题',
   '移动端显示问题',
   '浏览器和设备',
 ])
+
 requireMarkers('PR模板', read('.github/PULL_REQUEST_TEMPLATE.md'), [
   'npm run docs:check',
   'npm run docs:build',
