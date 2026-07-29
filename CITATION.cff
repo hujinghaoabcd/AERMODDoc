@@ -3,7 +3,7 @@ message: "使用本项目时，请引用以下信息。"
 title: "AERMOD 中文文档"
 type: software
 version: 1.0.0
-date-released: 2026-07-28
+date-released: 2026-07-29
 license: MIT
 repository-code: "https://github.com/hujinghaoabcd/AERMODDoc"
 url: "https://hujinghaoabcd.github.io/AERMODDoc/"
