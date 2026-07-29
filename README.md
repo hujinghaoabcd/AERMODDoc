@@ -6,6 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/hujinghaoabcd/AERMODDoc/actions"><img src="https://img.shields.io/github/actions/workflow/status/hujinghaoabcd/AERMODDoc/docs.yml?branch=main&label=docs" alt="Documentation build" /></a>
+  <a href="https://github.com/hujinghaoabcd/AERMODDoc/releases/latest"><img src="https://img.shields.io/github/v/release/hujinghaoabcd/AERMODDoc?label=release" alt="Latest release" /></a>
   <img src="https://img.shields.io/badge/AERMOD%20User%20Guide-EPA--454%2FB--23--008-blue" alt="EPA user guide" />
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License" /></a>
 </p>
@@ -28,6 +29,14 @@
 - 第 4 章：原文 1—48 条参考文献；
 - 附录 A—E：关键字/参数、错误消息、文件格式、版本修订和 73 个术语。
 
+## 正式版本
+
+- 当前版本：[v1.0.0](https://github.com/hujinghaoabcd/AERMODDoc/releases/tag/v1.0.0)
+- 版本变化：[CHANGELOG.md](./CHANGELOG.md)
+- 引用信息：[CITATION.cff](./CITATION.cff)
+
+文档版本用于标记中文在线文档的内容和基础设施状态，不代表 EPA AERMOD 模型版本。
+
 ## 本地开发
 
 要求已安装 Node.js 和 npm。
@@ -47,7 +56,7 @@ npm run docs:check-links
 
 其中：
 
-- `docs:check` 检查章节内容、编号、术语和防退化标记；
+- `docs:check` 检查仓库元数据、版本配置、章节内容、编号、术语和防退化标记；
 - `docs:build` 生成 VuePress 静态站点；
 - `docs:check-links` 检查构建后的站内链接与页面锚点。
 
@@ -61,7 +70,7 @@ docs/
 ├─ about/          项目状态与质量报告
 └─ .vuepress/      VuePress 配置、侧栏和静态资源
 scripts/           文档完整性与构建后检查
-.github/           Pages 工作流、Issue 和 PR 模板
+.github/           Pages、Release 工作流以及 Issue/PR 模板
 ```
 
 ## 说明
